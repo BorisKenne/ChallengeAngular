@@ -1,0 +1,63 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div id="page">
+ <div id="userPage" *ngIf="isUserPage" >
+  <div id="entete">
+   <div id="image">
+    <img id="photo" src="https://media-exp2.licdn.com/mpr/mpr/shrinknp_400_400/AAEAAQAAAAAAAAnaAAAAJGYxYTE1NmY3LTIzNTEtNDMyNC1iYTYzLTQ3ZDAyMjJhNzE0NA.jpg">
+   </div>
+   <div id="userInfo">
+    <h3>Name :{{userName}} </h3>
+    <h3>Email:{{userEmail}}</h3>
+   </div>
+  </div>
+  <div align="center" id="menu">
+   <button class="bouton" (click)="findNearbyShops()">Nearby Shops</button> <br> <br> <br>
+   <button class="bouton"(click)="getMyLikedShops()">My Liked Shops</button> <br> <br> <br>
+  </div>
+  <div align="center" id="divMap">
+    <h4>Tchek your position here</h4>
+     <iframe id="map" height="250" src="https://maps.google.co.uk?output=embed"></iframe>
+  </div>
+  <div align="center" id="deconDiv">
+      <button id="boutondeconnextion" (click)="deconnection()"> Deconnexion</button>
+  </div>
+ </div>
+
+ <div *ngIf="isConnectionPage" >
+    <h2 align="center">Welcome to shopCity</h2>
+    <h3 align="center">Enter your email and password to connect to your own space</h3>
+    <div align="center">
+      Email: <input type="text" [(ngModel)]="email"><br><br>
+      password:<input type="password" [(ngModel)]="pass"><br><br>
+      <button (click)="connection()"> connection</button>
+    </div>
+ </div>
+
+ <div id="contentPage">
+  <div *ngIf="isNearByShopsPage">
+   <h1 align="center">Nearby Shops</h1>
+   <ol display="inline-block" class="list">
+    <li *ngFor="let shop of nearByShops" display="inline-block">
+     <table class="shopTable">
+      <tr><td>{{shop.name}}</td></tr>
+      <tr><td><img src="{{shop.picture}}"></td></tr>
+      <tr (click)="likeShop(shop.link+'/')" class="shopLike"><td>Like</td></tr>
+     </table>
+    </li>
+   </ol>
+  </div>
+
+  <div  *ngIf="isLikedShopsPage" >
+    <h1 align="center">Liked Shops</h1>
+    <ol display="inline-block" class="list">
+        <li *ngFor="let shopl of likedShops" display="inline-block">
+          <table class="shopTable">
+            <tr><td>{{shopl.name}}</td></tr>
+            <tr><td><img src="{{shopl.picture}}"></td></tr>
+            <tr (click)="disLikeShop(shopl.link+'/')" class="shopDislike"><td>DisLike</td></tr>
+          </table>
+        </li>
+    </ol>
+  </div>
+ </div>
+</div>

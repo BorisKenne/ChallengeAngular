@@ -1,0 +1,89 @@
+#userPage{
+    float:left;
+    width: 39%;
+    height: 100%;
+    position: fixed;
+    padding-bottom: 15px;
+}
+#contentPage{
+    float:right;
+    width: 55%;
+    height: 100%;
+   
+}
+.list{
+    align-content: center;
+    width: 100%;
+}
+
+#entete{
+    width: 100%;
+    height: 25%;
+}
+#image{
+    float: left;
+    width: 50%;
+    height: 100%
+}
+#photo{
+    width: 100%;
+    height: 100%;
+}
+#userInfo{
+    float: right;
+    width: 50%;
+    align-content: center;
+}
+#menu{
+
+    width: 100%;
+    padding-top: 15px;
+}
+.bouton{
+    padding:6px 0 6px 0;
+	font:bold 13px Arial;
+	background:#f5f5f5;
+	color:#555;
+	border-radius:2px;
+	width:100px;
+	border:1px solid #ccc;
+}
+#divMap{
+    align-content: center;
+    width: 100%;
+
+}
+#map{
+    align-content: center;
+    width: 95%;
+}
+#deconDiv{
+    align-content: center;
+    width: 100%;
+}
+#boutondeconnextion{
+    padding:6px 0 6px 0;
+	font:bold 13px Arial;
+	background:#f14e4e;
+	color:#555;
+	border-radius:2px;
+	width:100px;
+	border:1px solid #ccc;
+}
+/* affichage de la liste sous forme de tableau */
+li, ol
+{
+	display: block;
+	float: left;
+	margin: 0;
+	padding: 0;
+}
+.shopTable{
+    text-align: center;
+}
+.shopLike{
+background-color:hsl(120, 82%, 75%);
+}
+.shopDislike{
+    background-color:hsl(22, 81%, 75%);
+}
